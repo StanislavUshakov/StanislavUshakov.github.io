@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="St Valentine's card">
+    <meta name="author" content="Stas">
+	<meta name="to" content="Эля">
+	
+    <title>Валентинка для Эли! &copy; 2020</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">
+  </head>  
+
+  <body>    
+
+    <div class="container marketing"> 
+
+      <!-- START THE FEATURETTES -->
+	<div class="row featurette">
+		<div class="col-md-12" style="font-size: 40pt; text-align:center; margin-top: 60px">
+			<span id="startDate"></span> - <span id="currentDate"></span>
+        </div>
+      </div>
+	
+      <div class="row featurette">
+		<div class="col-md-12" style="font-size: 80pt; text-align:center; color: red">
+			<span id="myTargetElement"></span> <span>дней</span>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+	  
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; February 2020 Валентинка для прекраснейшей в мире девушки</p>
+		<p>Спасибо bootstrap!</p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/docs.min.js"></script>
+    <script src="js/countUp.js"></script>
+	<script>
+	var startDate = new Date(2013, 3, 20);
+	var currentDate = new Date();
+	$('#startDate').text(startDate.toLocaleDateString('default', { year: 'numeric', month: 'long', day: 'numeric' }));
+	$('#currentDate').text(currentDate.toLocaleDateString('default', { year: 'numeric', month: 'long', day: 'numeric' }));
+	var diffTime = Math.abs(currentDate - startDate);
+	var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+	var demo = new CountUp('myTargetElement', diffDays, {duration: 10} );
+		if (!demo.error) {
+			demo.start();
+		} else {
+			console.error(demo.error);
+		}
+  </script>
+  </body>
+</html>
